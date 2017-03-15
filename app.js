@@ -20,7 +20,7 @@ Enemy.prototype.reset = function() {
     this.x = startPos;
     this.y = this.getRandomY();
     this.speed = this.getRandomSpeed();
-}
+};
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -75,7 +75,7 @@ Player.prototype.checkCollisions = function() {
             // is the bug on the same row as the player?
             if (enemy.y == charPrincess.y) {
                 // is the bug on the player?
-                if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
+                if (enemy.x >= this.x - 30 && enemy.x <= this.x + 30) {
                     charPrincess.reset();
                 }
             }
