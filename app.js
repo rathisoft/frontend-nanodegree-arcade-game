@@ -9,7 +9,7 @@ var Enemy = function() {
     this.possibleY = [60, 140, 220];
     this.speedRange = [600, 600]; //  Higher the values -> more the speed, lower the values  -> Slower the speed
 
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'enemy-bug.png';
 
     this.reset();
 };
@@ -55,7 +55,7 @@ Enemy.prototype.getRandomSpeed = function() {
 var Player = function() {
     this.xRange = [-2, 402];
     this.yRange = [-20, 380];
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'char-princess-girl.png';
     this.reset();
 }
 
@@ -68,15 +68,15 @@ Player.prototype.checkCollisions = function() {
         // player is on water, reset
         this.reset();
     } else if (this.y >= 60 && this.y <= 220) {
-        var charBoy = this;
+        var charPrincess = this;
         // player is on road rows, check collisions
         // loop through each bug
         allEnemies.forEach(function(enemy) {
             // is the bug on the same row as the player?
-            if (enemy.y == charBoy.y) {
+            if (enemy.y == charPrincess.y) {
                 // is the bug on the player?
                 if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
-                    charBoy.reset();
+                    charPrincess.reset();
                 }
             }
         });
